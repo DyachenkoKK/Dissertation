@@ -1,4 +1,4 @@
-        !COMPILER-GENERATED INTERFACE MODULE: Thu Apr 10 18:19:38 2025
+        !COMPILER-GENERATED INTERFACE MODULE: Fri Apr 18 15:44:46 2025
         ! This source file is for reference only and may not completely
         ! represent the generated interface used by the compiler.
         MODULE K_AMP__genmod

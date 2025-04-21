@@ -44,13 +44,14 @@
 ! Eigenvalues and eigenvectors
 
 	call Eigen(alf)
+    
 
 ! Blocks	
 	call Blocks
 
 ! Transfer matrix algorithm, vectors t_m	
 	call TransMatr
-	
+    
 	if(key == 0)return
 
 ! Green's matrices K and T

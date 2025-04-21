@@ -44,29 +44,16 @@ external RDabs,RDabs_alf
 
     print*, "K_pol has been started "
     f = 0.01d0; w=f*2d0*pi;
+    key=1
     
-    gm_num = 500; alfa_max = 10d0;
-    gm_step = 1.999d0*pi/gm_num;
+    gm_num = 150; alfa_max = 10d0;
+    gm_step = 1.99999d0*pi/gm_num;
     open(unit=1033,file='K_pol.dat',form ='formatted')
-    do i = 1, gm_num
-        
-           
-        alfa1_num = 1000; alfa2_num = 1000;
-        alfa1_min = -0.06d0; alfa2_min = -0.06d0;
-        alfa1_max = 0.06d0; alfa2_max = 0.06d0;
-        alfa1 = alfa1_min + alfa1_step*i; alfa2 = alfa2_min + alfa2_step*j;
-        alfa = sqrt(alfa1**2+alfa2**2); alfa_c = alfa*(1d0, 0d0); gamma = atan(alfa2, alfa1);
-            
-        call MultiK_An(alfa_c, gamma, 0d0)
-       
-        write(1033, *) abs(Kaz(1,1))
-        
-        
-        
+    do i = 1, gm_num     
         gm = gm_step*i
-        call Hamin(RDabs_alf, 1d-3, alfa_max, 1d-2, 1d-6, 10, pols, Ndz)
+        call Hamin(RDabs_alf, 1d-3, alfa_max, 1d-2, 1d-8, 10, pols, Ndz)
         if (Ndz>0) then
-                write(1033, *) gm, pols(1)
+                write(1033, *) gm, pols(1), pols(2)
         else 
             print*, 'No poles!'
         endif

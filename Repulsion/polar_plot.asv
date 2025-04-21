@@ -1,0 +1,17 @@
+close all;
+clc;
+clear;
+
+
+d=load('K_pol.dat');
+polarplot(d(:,1),d(:,2));
+
+ax = gca;
+ax.FontSize = 14;        % Увеличение размера шрифта
+ax.FontWeight = 'bold';
+
+
+
+% xlabel('$f$, MHz', 'Interpreter', 'LaTex');
+% ylabel('$\alpha$, $mm^{-1}$', 'Interpreter', 'LaTex');
+% ylim([0 1]);
